@@ -25,7 +25,7 @@ with open('./test.pb', 'rb') as f:
 @app.route('/news_recognition', methods=['POST'])
 def new_recognition():
     res_info = {
-        'code': -1,
+        'code': '-1',
     }
     if request.form['news_title'] != '':
         sentence = request.form['news_title']
