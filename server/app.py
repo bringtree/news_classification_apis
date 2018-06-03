@@ -8,7 +8,7 @@ from flask import request,jsonify
 app = Flask(__name__)
 # app.debug = True
 
-# wordVec = joblib.load("./word_dict_encoder.pkl")
+# wordVec = joblib.load("../word_dict_encoder.pkl")
 wordVec = joblib.load("/home/10G_dict.pkl")
 # wordVec = joblib.load("/home/bringtree/wordvec/10G_dict.pkl")
 gpu_options = tf.GPUOptions(allow_growth=True)
@@ -18,7 +18,7 @@ with open('./test.pb', 'rb') as f:
     graph_def.ParseFromString(f.read())
     sess.graph.as_default()
     tf.import_graph_def(graph_def, name='')
-    op = sess.graph.get_tensor_by_name('output_result:0')
+    op = sess.graph.get_tensor_by_name('predict_result/output_result:0')
     input_sen = sess.graph.get_tensor_by_name('input_sentences:0')
     input_len = sess.graph.get_tensor_by_name('input_length:0')
 

@@ -39,5 +39,6 @@ code       |string        |状态码
 
 # 启动
 ``` 
-docker run -it -p 0.0.0.0:5000:5000 -v /home/bringtree/wordvec/10G_dict.pkl:/home/10G_dict.pkl:ro news_api /bin/bash
+docker build -t "news_api" .
+docker run -i -p 0.0.0.0:5000:5000 -v /home/bringtree/wordvec/10G_dict.pkl:/home/10G_dict.pkl:ro news_api
 ``` 

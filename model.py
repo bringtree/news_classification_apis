@@ -15,7 +15,7 @@ class Model():
 
         :param sentence_len: 句子长度
         :param learning_rate: 学习速率
-        :param wordVec_size: 词向量的大小
+        :param word_vec_size: 词向量的大小
         :param hidden_num: lstm 隐藏层 size 大小
         :param output_keep_prob: Dropout 层 output 损失 (0,1]
         :param batch_size: batch_size 的大小
@@ -46,7 +46,7 @@ class Model():
         构建 lstm 模型
         :return: Model对象
         """
-        self.input_sentences = tf.placeholder(shape=[None, self.sentence_len, self.wordVec_size],
+        self.input_sentences = tf.placeholder(shape=[None, self.sentence_len, self.word_vec_size],
                                               name='input_sentences',
                                               dtype=tf.float32)
         self.input_labels = tf.placeholder(shape=[None], name='input_labels',
@@ -98,7 +98,7 @@ class Model():
         """
 
         :param sess: tf.Session() 返回的对象
-        :param input_sentences: 训练的句子 shape = [batch_size, self.sentence_len, self.wordVec_size],
+        :param input_sentences: 训练的句子 shape = [batch_size, self.sentence_len, self.word_vec_size],
         :param input_labels: 训练的标签 shape = [batch_size]
         :param input_length: 训练的句子长度 shape = [batch_size]
         :return: loss大小 int
@@ -126,7 +126,7 @@ class Model():
 # 测试
 # if __name__ == '__main__':
 #     sess = tf.Session()
-#     lstm_model = Model(sentence_len=50, learning_rate=1, wordVec_size=2, hidden_num=100, output_keep_prob=0.5,
+#     lstm_model = Model(sentence_len=50, learning_rate=1, word_vec_size=2, hidden_num=100, output_keep_prob=0.5,
 #                        batch_size=3)
 #     lstm_model.build()
 #     sess.run(tf.global_variables_initializer())
