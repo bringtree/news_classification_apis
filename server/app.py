@@ -9,8 +9,8 @@ app = Flask(__name__)
 # app.debug = True
 
 # wordVec = joblib.load("./word_dict_encoder.pkl")
-# wordVec = joblib.load("/home/10G_dict.pkl")
-wordVec = joblib.load("/home/bringtree/wordvec/10G_dict.pkl")
+wordVec = joblib.load("/home/10G_dict.pkl")
+# wordVec = joblib.load("/home/bringtree/wordvec/10G_dict.pkl")
 gpu_options = tf.GPUOptions(allow_growth=True)
 sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 with open('./test.pb', 'rb') as f:
