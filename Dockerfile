@@ -8,6 +8,6 @@ RUN pip3 install gunicorn gevent
 
 WORKDIR /home/
 RUN git clone https://github.com/bringtree/news_classification_apis.git
-RUN  /home/project_design_app
+WORKDIR  /home/project_design_app/server
 CMD ["python3", "app:app", "-c", "./gunicorn.conf.py"]
 
