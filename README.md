@@ -41,4 +41,3 @@ code       |string        |状态码
 ``` 
 docker run -it -p 0.0.0.0:5000:5000 -v /home/bringtree/wordvec/10G_dict.pkl:/home/10G_dict.pkl:ro news_api /bin/bash
 ``` 
-用gunicorn 启动一直挂 原因未知。感觉应该是内存的原因 词向量10G. 我换成小份的词向量就正常。 
