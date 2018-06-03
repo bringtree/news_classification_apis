@@ -114,3 +114,4 @@ out
 gen
 save_model
 data
+/server/word_dict_encoder.pkl
