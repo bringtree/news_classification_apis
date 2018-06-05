@@ -37,8 +37,8 @@ code       |string        |状态码
 -1       |标题格式有误！
 
 
-# 启动
+# 使用
 ``` 
-docker build -t "news_api" .
-docker run -i -p 0.0.0.0:5000:5000 -v /home/bringtree/wordvec/10G_dict.pkl:/home/10G_dict.pkl:ro news_api
+docker pull bringtree/news_api
+docker run -d -p 0.0.0.0:5000:5000 -v /home/bringtree/wordvec/10G_dict.pkl:/home/10G_dict.pkl:ro news_api
 ``` 
