@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-py3
+FROM tensorflow/tensorflow:1.7.1-gpu-py3
 MAINTAINER Bringtree "bringtree@qq.com"
 
 RUN sed -i 's#http://archive.ubuntu.com#http://mirrors.163.com#g' /etc/apt/sources.list
