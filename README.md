@@ -38,7 +38,13 @@ code       |string        |状态码
 
 
 # 使用
-``` 
+``` bash
 docker pull bringtree/news_api
 docker run -d -p 0.0.0.0:5000:5000 -v /home/bringtree/wordvec/10G_dict.pkl:/home/10G_dict.pkl:ro bringtree/news_api
-``` 
+```
+
+# gpu
+``` bash
+docker pull bringtree/news_api:gpu
+docker run --runtime=nvidia  -d -p 0.0.0.0:5000:5000 -v /home/bringtree/wordvec/10G_dict.pkl:/home/10G_dict.pkl:ro bringtree/news_api:gpu
+```
